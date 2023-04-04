@@ -4,3 +4,4 @@ prosty kalkultor z użyciem javascript
 - dodać backspace
 - wielokrotne znaki
 - overflow result
+- dodać background jakiś
