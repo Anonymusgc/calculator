@@ -20,7 +20,7 @@ const addEvents = () => { // dodaje eventy do przycisków
     numSeven.addEventListener('click', varSeven)
     numEight.addEventListener('click', varEight)
     numNine.addEventListener('click', varNine)
-
+    
     const changeButton = document.getElementById('change');
     changeButton.addEventListener('click', signChange);
 
