@@ -100,10 +100,12 @@ const varThree = () => {
     if (ResizingStop()) {
         return
     }
-    if (numTemp === "0") {
+    if (numTemp == "0") {
+
         screenResult.textContent = '3';
         numTemp = '3';
     } else {
+        
         screenResult.textContent += '3';
         numTemp += '3';
     }
@@ -331,7 +333,7 @@ const equation = () => {
     numTemp = result
     numbersForEquation = [];
     // numbersForEquation = [result];
-    result = +result.toFixed(4); // zaokrąglanie
+    result = +result.toFixed(6); // zaokrąglanie
     screenResult.textContent = result;
     let screenLengthAfter = screenResult.textContent.length
     if (screenLengthAfter < screenLengthBefore) {
