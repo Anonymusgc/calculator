@@ -58,7 +58,7 @@ const varZero = () => {
     if (ResizingStop()) {
         return
     }
-    if (numTemp !== "0") {
+    if (numTemp != "0") {
         numTemp += '0';
         screenResult.textContent += '0';
     }
@@ -70,7 +70,7 @@ const varOne = () => {
     if (ResizingStop()) {
         return
     }
-    if (numTemp === "0") {
+    if (numTemp == "0") {
         screenResult.textContent = '1';
         numTemp = '1';
     } else {
@@ -84,7 +84,7 @@ const varTwo = () => {
     if (ResizingStop()) {
         return
     }
-    if (numTemp === "0") {
+    if (numTemp == "0") {
         // alert("działa");
         screenResult.textContent = '2';
         numTemp = '2';
@@ -115,7 +115,7 @@ const varFour = () => {
     if (ResizingStop()) {
         return
     }
-    if (numTemp === "0") {
+    if (numTemp == "0") {
         screenResult.textContent = '4';
         numTemp = '4';
     } else {
@@ -128,7 +128,7 @@ const varFive = () => {
     if (ResizingStop()) {
         return
     }
-    if (numTemp === "0") {
+    if (numTemp == "0") {
         screenResult.textContent = '5';
         numTemp = '5';
     } else {
@@ -141,7 +141,7 @@ const varSix = () => {
     if (ResizingStop()) {
         return
     }
-    if (numTemp === "0") {
+    if (numTemp == "0") {
         screenResult.textContent = '6';
         numTemp = '6';
     } else {
@@ -154,7 +154,7 @@ const varSeven = () => {
     if (ResizingStop()) {
         return
     }
-    if (numTemp === "0") {
+    if (numTemp == "0") {
         screenResult.textContent = '7';
         numTemp = '7';
     } else {
@@ -167,7 +167,7 @@ const varEight = () => {
     if (ResizingStop()) {
         return
     }
-    if (numTemp === "0") {
+    if (numTemp == "0") {
         screenResult.textContent = '8';
         numTemp = '8';
     } else {
@@ -180,7 +180,7 @@ const varNine = () => {
     if (ResizingStop()) {
         return
     }
-    if (numTemp === "0") {
+    if (numTemp == "0") {
         screenResult.textContent = '9';
         numTemp = '9';
     } else {
@@ -330,10 +330,10 @@ const equation = () => {
     if (!Number.isInteger(result)) {
         floatSwitch = 1
     }
+    result = +result.toFixed(6);// zaokrąglanie
     numTemp = result
     numbersForEquation = [];
     // numbersForEquation = [result];
-    result = +result.toFixed(6); // zaokrąglanie
     screenResult.textContent = result;
     let screenLengthAfter = screenResult.textContent.length
     if (screenLengthAfter < screenLengthBefore) {
