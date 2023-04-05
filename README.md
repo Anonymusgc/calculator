@@ -2,6 +2,6 @@
 prosty kalkultor z użyciem javascript
 # To Do
 - dodać backspace
-- wielokrotne znaki
-- overflow result
 - dodać background jakiś
+- zablokować dzielenie przez 0
+
