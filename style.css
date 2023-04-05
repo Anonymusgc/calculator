@@ -90,3 +90,12 @@ button:active{
 #equal:hover{
     background-color: orange;
 }
+#clear{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#clear img{
+    width: 45%;
+    /* margin: auto; */
+}

@@ -357,9 +357,8 @@ const clearAll = () => {
 }
 
 const BS = () => {//
-    if (sign !== '') {
-        sign = ""
-        // screenResult.textContent = ;// dodać usuwanie pojedyncze
+    if(numbersForEquation.length === 1){
+        
     }
 
 }
