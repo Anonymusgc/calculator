@@ -357,9 +357,36 @@ const clearAll = () => {
 }
 
 const BS = () => {//
-    if(numbersForEquation.length === 1){
-        
+    if (screenResult.textContent.charAt(screenResult.textContent.length - 2) === sign && sign !== "") {
+        sign = "";
+        screenResult.textContent = screenResult.textContent.slice(0, -3)
+        numTemp = numbersForEquation[0]
+        numbersForEquation = []
+        if(screenResult.textContent === ""){
+            clearAll();
+        }
+        alert("1 gowno")
+    } else if (screenResult.textContent.charAt(screenResult.textContent.length - 1) === ".") {
+        screenResult.textContent = screenResult.textContent.slice(0, -1);
+        numTemp = `${numTemp}`.slice(0,-1) // ndz
+        floatSwitch = 0;
+        if(screenResult.textContent === ""){
+            clearAll();
+        }
+        alert("2 gowno")
     }
+    else if ((numbersForEquation.length === 0 ) && sign === "" && floatSwitch === 0 && numTemp.length <=1) {//|| numbersForEquation.length === 1
+        clearAll();
+        alert("3 gowno")
+    } else {
+        screenResult.textContent = screenResult.textContent.slice(0, -1)
+        numTemp = `${numTemp}`.slice(0,-1) // nie działa
+        if(screenResult.textContent === ""){
+            clearAll();
+        }
+        alert("4 gowno")
+    }
+
 
 }
 
