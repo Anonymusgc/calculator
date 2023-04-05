@@ -5,11 +5,16 @@ body{
     height: 100vh; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+header{
+    background-color:rgb(240, 238, 238);
+    padding: 3px 5px;
+}
 header h1{
     margin: 0.5em 1em;
+    text-transform: uppercase;
 }
 main {
-    margin-top: 10em;
+    margin-top: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +36,7 @@ main {
     display: flex;
     justify-content: right;
     align-items:flex-end;
+    flex-direction: column;
     /* border: 1px solid grey; */
     font-size: 100%;
    
@@ -39,6 +45,7 @@ main {
     margin: 10px;
     font-size: 3rem;
     font-family: rubik;
+    margin: auto 0 0 0;
 }
 #calcType{
     font-size: 1.4rem;
