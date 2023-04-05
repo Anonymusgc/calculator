@@ -55,15 +55,21 @@ const addEvents = () => { // dodaje eventy do przycisków
     
 }
 const varZero = () =>{
-    
+    if(ResizingStop()){
+        return
+    }    
     if(numTemp !== "0"){
         numTemp += '0';
         screenResult.textContent += '0';
     }
+    ResizingTheScreen();
     
 }
 const varOne = () =>{
     // numbersForEquation.push(0);
+    if(ResizingStop()){
+        return
+    }  
     if(numTemp === "0"){
         screenResult.textContent = '1';
         numTemp = '1';
@@ -71,10 +77,13 @@ const varOne = () =>{
         screenResult.textContent += '1';
         numTemp += '1';
     }
-    
+    ResizingTheScreen();
 }
 const varTwo = () =>{
     // numbersForEquation.push(0);
+    if(ResizingStop()){
+        return
+    }  
     if(numTemp === "0"){
         // alert("działa");
         screenResult.textContent = '2';
@@ -83,10 +92,14 @@ const varTwo = () =>{
         screenResult.textContent += '2';
         numTemp += '2';
     }
+    ResizingTheScreen();
     // alert(numTemp)
 }
 const varThree = () =>{
     // numbersForEquation.push(0);
+    if(ResizingStop()){
+        return
+    }  
     if(numTemp === "0"){
         screenResult.textContent = '3';
         numTemp = '3';
@@ -94,8 +107,12 @@ const varThree = () =>{
         screenResult.textContent += '3';
         numTemp += '3';
     }
+    ResizingTheScreen();
 }
 const varFour = () =>{
+    if(ResizingStop()){
+        return
+    }  
     if(numTemp === "0"){
         screenResult.textContent = '4';
         numTemp = '4';
@@ -103,8 +120,12 @@ const varFour = () =>{
         screenResult.textContent += '4';
         numTemp += '4';
     }
+    ResizingTheScreen();
 }
 const varFive = () =>{
+    if(ResizingStop()){
+        return
+    }  
     if(numTemp === "0"){
         screenResult.textContent = '5';
         numTemp = '5';
@@ -112,8 +133,12 @@ const varFive = () =>{
         screenResult.textContent += '5';
         numTemp += '5';
     }
+    ResizingTheScreen();
 }
 const varSix = () =>{
+    if(ResizingStop()){
+        return
+    }  
     if(numTemp === "0"){
         screenResult.textContent = '6';
         numTemp = '6';
@@ -121,8 +146,12 @@ const varSix = () =>{
         screenResult.textContent += '6';
         numTemp += '6';
     }
+    ResizingTheScreen();
 }
 const varSeven = () =>{
+    if(ResizingStop()){
+        return
+    }  
     if(numTemp === "0"){
         screenResult.textContent = '7';
         numTemp = '7';
@@ -130,8 +159,12 @@ const varSeven = () =>{
         screenResult.textContent += '7';
         numTemp += '7';
     }
+    ResizingTheScreen();
 }
 const varEight = () =>{
+    if(ResizingStop()){
+        return
+    }  
     if(numTemp === "0"){
         screenResult.textContent = '8';
         numTemp = '8';
@@ -139,8 +172,12 @@ const varEight = () =>{
         screenResult.textContent += '8';
         numTemp += '8';
     }
+    ResizingTheScreen();
 }
 const varNine = () =>{
+    if(ResizingStop()){
+        return
+    }  
     if(numTemp === "0"){
         screenResult.textContent = '9';
         numTemp = '9';
@@ -148,11 +185,11 @@ const varNine = () =>{
         screenResult.textContent += '9';
         numTemp += '9';
     }
+    ResizingTheScreen();
 }
 
 const floatingPointAdd = () => {
     if(floatSwitch == 0) {
-        
         numTemp += '.';
         floatSwitch = 1;
         if(numbersForEquation.length !== 0){
@@ -162,9 +199,13 @@ const floatingPointAdd = () => {
             screenResult.textContent = numTemp;
         }
     }
+    ResizingTheScreen();
 }
 
-const additon = () => { 
+const additon = () => {
+    if(ResizingStop()){
+        return
+    }   
     addNumber();
     if(numbersForEquation.length === 2)
     {
@@ -175,9 +216,13 @@ const additon = () => {
     sign = '+';
     screenResult.textContent += ' + ';
     // alert(numbersForEquation+" "+numTemp)
+    ResizingTheScreen();
 }
 
 const subtraction = () => {
+    if(ResizingStop()){
+        return
+    }  
     addNumber();
     if(numbersForEquation.length === 2)
     {
@@ -187,9 +232,13 @@ const subtraction = () => {
     }
     sign = '-';
     screenResult.textContent += ' - ';
+    ResizingTheScreen();
 }
 
 const multiply = () => {
+    if(ResizingStop()){
+        return
+    }  
     addNumber();
     if(numbersForEquation.length === 2)
     {
@@ -199,8 +248,12 @@ const multiply = () => {
     }
     sign = '*';
     screenResult.textContent += ' * ';
+    ResizingTheScreen();
 }
 const division = () => {
+    if(ResizingStop()){
+        return
+    }  
     addNumber();
     if(numbersForEquation.length === 2)
     {
@@ -210,8 +263,12 @@ const division = () => {
     }
     sign = '/';
     screenResult.textContent += ' / ';
+    ResizingTheScreen();
 }
 const modulo = () => {
+    if(ResizingStop()){
+        return
+    }  
     addNumber();
     if(numbersForEquation.length === 2)
     {
@@ -221,23 +278,34 @@ const modulo = () => {
     }
     sign = '%';
     screenResult.textContent += ' % ';
+    ResizingTheScreen();
 }
 
 
 const equation = () => { 
     addNumber();
+    let screenLengthBefore = screenResult.textContent.length
     if(numbersForEquation.length > 1) {
         result = signCheck();
     }
     else {
         result = numbersForEquation[0];
     }
+    if(!Number.isInteger(result)){
+        floatSwitch = 1
+    }
     numTemp = result
     numbersForEquation = [];
     // numbersForEquation = [result];
     result = +result.toFixed(4); // zaokrąglanie
     screenResult.textContent = result;
+    let screenLengthAfter = screenResult.textContent.length
+    if(screenLengthAfter < screenLengthBefore){
+        screenResult.style.fontSize = screenRFontSize+"px";
+        screenResult.textContent = result;
+    }
     console.log(result)
+    ResizingTheScreen();
 }
 
 
@@ -248,7 +316,9 @@ const clearAll = () =>{
     numbersForEquation = [];
     numTemp = '0';
     floatSwitch = 0;
+    screenResult.style.fontSize = screenRFontSize+"px";
     screenResult.textContent = numTemp;
+    
 }
 
 const BS = () =>{//
@@ -282,7 +352,7 @@ const signChange = () => {
         numbersForEquation[0] = numbersForEquation[0] *(-1)
         screenResult.textContent = numbersForEquation[0];
     }
-    
+    ResizingTheScreen();
     // console.log(numTemp);
     // console.log(numbersForEquation)
 }
@@ -317,9 +387,29 @@ const signCheck = () => { // sprawdza znak i zwraca działanie danego znaku
     }
 }
 
+const ResizingTheScreen = () => {
+    const screen = document.getElementsByClassName("screen")[0]
+    const screenResult = document.getElementById('result')
+    let screenWidth = screen.clientWidth
+    while(screenResult.clientWidth > screenWidth || screenResult.clientHeight > 57){
+        let screenRFontSize = parseFloat(window.getComputedStyle(screenResult, null).getPropertyValue('font-size'))
+        screenResult.style.fontSize = (screenRFontSize - 1) +"px";
+    }
+}
+
+const ResizingStop = () => {
+    const screenResult = document.getElementById('result')
+    const minFontSize = 25
+    let screenRFontSize = parseFloat(window.getComputedStyle(screenResult, null).getPropertyValue('font-size'))
+    if(screenRFontSize <= minFontSize){
+        return true; 
+    }
+}
+
 
 const screenResult = document.getElementById('result')
 
+const screenRFontSize = parseFloat(window.getComputedStyle(screenResult, null).getPropertyValue('font-size'))
 let numbersForEquation = [];
 let numTemp = "0"; 
 let sign = '';
@@ -328,7 +418,7 @@ let floatSwitch = 0;
 // let limiter = 0;
 screenResult.textContent = numTemp;
 addEvents();
- 
+// ResizingTheScreen(); 
 
 
 
