@@ -439,6 +439,10 @@ const signCheck = () => { // sprawdza znak i zwraca działanie danego znaku
         return numbersForEquation[0] * numbersForEquation[1];
     }
     if (sign === '/') {
+        if(numbersForEquation[1] == 0){
+            alert("Nie wolno dzielić przez 0");
+            return 0
+        }
         return numbersForEquation[0] / numbersForEquation[1];
     }
     if (sign === '%') {
